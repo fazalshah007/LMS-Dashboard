@@ -29,8 +29,8 @@ const DashboardLayout = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
     <>
    
-   <div className='w-full h-full antialiased bg-gray-50 dark:bg-gray-900'>
-      <nav className='border-b border-gray-200 px-8 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0
+   <div className='w-full h-full antialiased bg-gray-900'>
+      <nav className='border-b px-8 py-2.5 bg-gray-800 border-gray-700 fixed left-0
        right-0 top-0 z-50 flex justify-between'>
        <div className='flex items-center'>
        <span  className='mr-4 text-white block md:hidden'><button onClick={() => { setHamburgerMenuBar(!hamburgerMenuBar) }}><MenuIcon /></button></span>
@@ -45,18 +45,18 @@ const DashboardLayout = ({ isLoggedIn, setIsLoggedIn }) => {
       
       <aside
       style={{ scrollbarWidth:"none" }}
-       className={`fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform ${hamburgerMenuBar ? '-translate-x-full' : ''} bg-white border-r border-gray-200 md:translate-x-0 dark:bg-gray-800 dark:border-gray-700 overflow-y-auto`}>
+       className={`fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform ${hamburgerMenuBar ? '-translate-x-full' : ''}  border-r md:translate-x-0 bg-gray-800 border-gray-700 overflow-y-auto`}>
         <div className='text-white min-h-full '>
         {/* start drop down    */}
           <Link to='/students'>
           <button onClick={(e)=>{
             setIsStudentDrawerOpen(!isStudentDrawerOpen)
             
-          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all' >Students<span>{isStudentDrawerOpen ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}</span>
+          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all ease-in-out' >Students<span>{isStudentDrawerOpen ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}</span>
           </button>
           </Link>
           {/* dropdown */}
-         {isStudentDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8'>
+         {isStudentDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8 transition-all ease-in-out'>
             <Link  to='students/create'  className='w-full mt-2 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all'><button>Create</button></Link>
       
           </div>) : ('')}
@@ -66,11 +66,11 @@ const DashboardLayout = ({ isLoggedIn, setIsLoggedIn }) => {
           <Link to='/teachers'><button onClick={(e)=>{
             setIsTeacherDrawerOpen(!isTeacherDrawerOpen)
             
-          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all' >Teacher
+          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all ease-in-out' >Teacher
             <span>{isTeacherDrawerOpen ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}</span>
           </button></Link>
           {/* dropdown */}
-         {isTeacherDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8'>
+         {isTeacherDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8 transition-all ease-in-out'>
             <Link to='teachers/create' className='w-full mt-2 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all'><button>Create</button></Link>
 
       
@@ -82,11 +82,11 @@ const DashboardLayout = ({ isLoggedIn, setIsLoggedIn }) => {
           <Link to='subjects'><button onClick={(e)=>{
             setIsSubjectDrawerOpen(!isSubjectDrawerOpen)
             
-          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all' >Subjects
+          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all ease-in-out' >Subjects
             <span>{isSubjectDrawerOpen ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}</span>
           </button></Link>
           {/* dropdown */}
-         {isSubjectDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8'>
+         {isSubjectDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8 transition-all ease-in-out'>
             <Link to='subjects/create' className='w-full mt-2 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all'><button>Create</button></Link>
         
       
@@ -98,11 +98,11 @@ const DashboardLayout = ({ isLoggedIn, setIsLoggedIn }) => {
           <button onClick={(e)=>{
             setIsSchoolDrawerOpen(!isSchoolDrawerOpen)
             
-          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all' >School
+          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all ease-in-out' >School
             <span>{isSchoolDrawerOpen ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}</span>
           </button>
           {/* dropdown */}
-         {isSchoolDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8'>
+         {isSchoolDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8 transition-all ease-in-out'>
             <button className='w-full mt-2 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all'>Add</button>
             <button className='w-full mt-2 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all'>List</button>
       
@@ -114,11 +114,11 @@ const DashboardLayout = ({ isLoggedIn, setIsLoggedIn }) => {
           <button onClick={(e)=>{
             setIsSyllabusDrawerOpen(!isSyllabusDrawerOpen)
             
-          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all' >Syllabus
+          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all ease-in-out' >Syllabus
             <span>{isSyllabusDrawerOpen ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}</span>
           </button>
           {/* dropdown */}
-         {isSyllabusDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8'>
+         {isSyllabusDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8 transition-all ease-in-out'>
             <button className='w-full mt-2 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all'>Add</button>
             <button className='w-full mt-2 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all'>List</button>
       
@@ -130,11 +130,11 @@ const DashboardLayout = ({ isLoggedIn, setIsLoggedIn }) => {
           <button onClick={(e)=>{
             setIsClassDrawerOpen(!isClassDrawerOpen)
             
-          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all' >Class
+          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all ease-in-out' >Class
             <span>{isClassDrawerOpen ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}</span>
           </button>
           {/* dropdown */}
-         {isClassDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8'>
+         {isClassDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8 transition-all ease-in-out'>
             <button className='w-full mt-2 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all'>Add</button>
             <button className='w-full mt-2 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all'>List</button>
       
@@ -146,11 +146,11 @@ const DashboardLayout = ({ isLoggedIn, setIsLoggedIn }) => {
           <button onClick={(e)=>{
             setIsFeesDrawerOpen(!isFeesDrawerOpen)
             
-          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all' >Fees
+          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all ease-in-out' >Fees
             <span>{isFeesDrawerOpen ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}</span>
           </button>
           {/* dropdown */}
-         {isFeesDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8'>
+         {isFeesDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8 transition-all ease-in-out'>
             <button className='w-full mt-2 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all'>Add</button>
             <button className='w-full mt-2 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all'>List</button>
       
@@ -162,11 +162,11 @@ const DashboardLayout = ({ isLoggedIn, setIsLoggedIn }) => {
           <button onClick={(e)=>{
             setIsAddmissionDrawerOpen(!isAddmissionDrawerOpen)
             
-          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all' >Admission
+          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all ease-in-out' >Admission
             <span>{isAddmissionDrawerOpen ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}</span>
           </button>
           {/* dropdown */}
-         {isAddmissionDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8'>
+         {isAddmissionDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8 transition-all ease-in-out'>
             <button className='w-full mt-2 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all'>Add</button>
             <button className='w-full mt-2 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all'>List</button>
       
@@ -178,11 +178,11 @@ const DashboardLayout = ({ isLoggedIn, setIsLoggedIn }) => {
           <button onClick={(e)=>{
             setIsExamDrawerOpen(!isExamDrawerOpen)
             
-          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all' >Exam
+          }} className='w-full mt-8 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all ease-in-out' >Exam
             <span>{isExamDrawerOpen ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}</span>
           </button>
           {/* dropdown */}
-         {isExamDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8'>
+         {isExamDrawerOpen ? ( <div className='flex flex-col p-4 items-start ml-8 transition-all ease-in-out'>
             <button className='w-full mt-2 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all'>Add</button>
             <button className='w-full mt-2 hover:bg-gray-600 py-2 px-4 flex justify-between items-center transition-all'>List</button>
       
